@@ -1,7 +1,7 @@
 import os
 import pygame
 
-sprites = {}
+sprites = {} # dictionary
 
 def load_sprites():
     path = os.path.join("assets", "sprites")
