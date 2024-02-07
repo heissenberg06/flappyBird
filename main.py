@@ -37,9 +37,11 @@ while running:
         if event.type == column_create_event:
             Column(sprites)
 
+        bird.handle_event(event)
 
 
-    screen.fill("pink")
+
+    screen.fill(0)
 
     sprites.draw(screen)
     sprites.update()
