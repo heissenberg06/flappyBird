@@ -22,6 +22,7 @@ gamestarted = False
 
 
 assets.load_sprites()
+assets.load_audios()
 
 sprites = pygame.sprite.LayeredUpdates()
 
@@ -66,11 +67,12 @@ while running:
     if gamestarted and not gameover:
         sprites.update()
 
-    if bird.check_collision(sprites):
+    if bird.check_collision(sprites) and not gameover:
         gameover = True
         gamestarted = False
         GameOverMessage(sprites)
         pygame.time.set_timer(column_create_event, 0)
+        assets.play_audio("hit")
        
     for sprite in sprites:
         if type(sprite) is Column and sprite.is_passed():
