@@ -72,12 +72,12 @@ while running:
         gamestarted = False
         GameOverMessage(sprites)
         pygame.time.set_timer(column_create_event, 0)
-        assets.play_audio("hit")
+        assets.play_audio("anani")
        
     for sprite in sprites:
         if type(sprite) is Column and sprite.is_passed():
             score.value += 1
-            assets.play_audio("point")
+            assets.play_audio("benekli")
 
 
     pygame.display.flip()
